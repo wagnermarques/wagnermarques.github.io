@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de Privacidade — FZL Apps</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://wagnermarques.github.io/privacy.html" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site">
+        <img src="favicon.svg" alt="" />
+        <h1>Política de Privacidade — FZL Apps</h1>
+      </header>
+      <p class="meta">
+        Responsável: Wagner Marques — <a href="mailto:wagnerdocri@gmail.com">wagnerdocri@gmail.com</a><br />
+        Última atualização: 17 de novembro de 2026
+      </p>
+
+      <article class="card doc">
+        <p>
+          Esta política vale para todos os aplicativos web <strong>FZL Apps</strong> publicados em
+          <code>https://wagnermarques.github.io/</code> que usam o login Google compartilhado. Cada aplicativo pode ter
+          uma política complementar com detalhes próprios, listada na seção 8.
+        </p>
+
+        <h2>1. Princípios</h2>
+        <ul>
+          <li>Os aplicativos funcionam no navegador (client-side); <strong>não há servidor próprio</strong> que receba seus dados.</li>
+          <li>Seus dados ficam no seu dispositivo e, se você autorizar, na sua própria conta Google Drive ou OneDrive.</li>
+          <li>O login é opcional sempre que o aplicativo puder funcionar no modo local.</li>
+        </ul>
+
+        <h2>2. Dados acessados pelo login Google</h2>
+        <ul>
+          <li>
+            <code>openid</code>, <code>profile</code>, <code>email</code>: nome, e-mail e foto de perfil, exibidos apenas na
+            interface do aplicativo para identificar a sessão.
+          </li>
+          <li>
+            <code>https://www.googleapis.com/auth/drive.file</code>: permite criar, abrir, atualizar e renomear
+            <strong>somente</strong> arquivos criados pelos FZL Apps ou escolhidos por você. Não permite listar, ler ou
+            alterar os demais arquivos do seu Google Drive.
+          </li>
+        </ul>
+        <p>
+          Como todos os FZL Apps usam o mesmo cliente OAuth, um arquivo criado por um FZL App no seu Drive pode ser acessado
+          por outro FZL App que você também autorizar.
+        </p>
+
+        <h2>3. Uso Limitado (Google API Services User Data Policy)</h2>
+        <p>
+          O uso e a transferência de informações recebidas das APIs do Google pelos FZL Apps seguem a
+          <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">
+            Política de Dados de Usuário dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado. Os dados
+          são usados apenas para oferecer as funções que você aciona no aplicativo; não são vendidos, não são usados para
+          publicidade e não são usados para treinar modelos de inteligência artificial. Nenhum humano lê esses dados, salvo
+          com seu consentimento explícito (por exemplo, para suporte que você solicitar).
+        </p>
+
+        <h2>4. Armazenamento</h2>
+        <ul>
+          <li>
+            <strong>No dispositivo:</strong> dados e preferências ficam no armazenamento do navegador
+            (<code>localStorage</code>, <code>sessionStorage</code>, <code>IndexedDB</code>). Os FZL Apps compartilham o
+            mesmo endereço (<code>wagnermarques.github.io</code>); por isso a sessão de login é comum a todos, enquanto os
+            dados de cada aplicativo são guardados separadamente.
+          </li>
+          <li>
+            <strong>Na sua nuvem:</strong> quando você ativa a sincronização, os arquivos vão diretamente do seu navegador
+            para a API oficial do Google Drive ou do Microsoft OneDrive.
+          </li>
+          <li>
+            <strong>Tokens de acesso:</strong> ficam apenas no navegador, nunca são enviados ao desenvolvedor e expiram
+            automaticamente.
+          </li>
+        </ul>
+
+        <h2>5. Câmera, microfone e arquivos</h2>
+        <p>
+          Quando um aplicativo oferece captura de imagem ou áudio, o navegador pede sua permissão e a captura só ocorre por
+          ação sua. Ao gravar outras pessoas, você é responsável por obter o consentimento delas, conforme a LGPD
+          (Lei nº 13.709/2018) e as normas de ética em pesquisa aplicáveis.
+        </p>
+
+        <h2>6. Compartilhamento</h2>
+        <p>
+          Não compartilhamos, vendemos ou transferimos dados pessoais a terceiros. Os únicos serviços externos envolvidos
+          são os que você escolhe usar: Google (login e Drive) e Microsoft (login e OneDrive), sob as políticas desses
+          provedores. Os aplicativos não usam cookies de publicidade nem ferramentas de analytics.
+        </p>
+
+        <h2>7. Seus direitos, revogação e exclusão</h2>
+        <ul>
+          <li>Desconecte-se a qualquer momento pelo próprio aplicativo.</li>
+          <li>Apague os dados locais limpando os dados do site <code>wagnermarques.github.io</code> no navegador.</li>
+          <li>Arquivos sincronizados permanecem na sua nuvem até que você os apague lá.</li>
+          <li>
+            Revogue o acesso em
+            <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">myaccount.google.com/permissions</a>.
+          </li>
+          <li>
+            Pedidos relativos à LGPD (acesso, correção, exclusão): <a href="mailto:wagnerdocri@gmail.com">wagnerdocri@gmail.com</a>.
+            Como não guardamos seus dados em servidor, a maioria dos pedidos é atendida diretamente no seu dispositivo ou
+            na sua nuvem.
+          </li>
+        </ul>
+
+        <h2>8. Políticas por aplicativo</h2>
+        <ul id="app-policies"></ul>
+
+        <h2>9. Alterações</h2>
+        <p>Mudanças relevantes serão publicadas nesta página com a data de atualização revisada.</p>
+      </article>
+
+      <footer>
+        <a href="./">← FZL Apps</a>
+        <a href="terms.html">Termos de Uso</a>
+        <a href="mailto:wagnerdocri@gmail.com">Contato</a>
+      </footer>
+    </div>
+
+    <script src="apps.js"></script>
+    <script>
+      ;(function () {
+        var ul = document.getElementById('app-policies')
+        ;(window.FZL_APPS || []).forEach(function (app) {
+          var li = document.createElement('li')
+          var a = document.createElement('a')
+          a.href = app.privacy
+          a.textContent = app.name
+          li.append(a, ' — ' + app.description)
+          ul.append(li)
+        })
+      })()
+    </script>
+    <noscript>
+      <p class="wrap">
+        Política do FZL CAQDAS:
+        <a href="https://wagnermarques.github.io/fzl-caqdas/privacy.html">wagnermarques.github.io/fzl-caqdas/privacy.html</a>
+      </p>
+    </noscript>
+  </body>
+</html>
