@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FZL Apps</title>
+    <meta
+      name="description"
+      content="FZL Apps: aplicativos web de pesquisa e estudo que funcionam no navegador, com login Google opcional e dados no seu dispositivo ou na sua própria nuvem."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site">
+        <img src="favicon.svg" alt="" />
+        <h1>FZL Apps</h1>
+      </header>
+      <p class="lead">
+        Aplicativos web de pesquisa e estudo desenvolvidos por Wagner Marques. Funcionam inteiramente no navegador, sem
+        servidor próprio: seus dados ficam no seu dispositivo e, se você quiser, na sua própria conta Google Drive ou
+        OneDrive.
+      </p>
+
+      <div id="context" class="context" role="status"></div>
+
+      <section class="card">
+        <h2>Aplicativos</h2>
+        <div id="apps" class="apps"></div>
+      </section>
+
+      <section class="card">
+        <h2>Login com Google</h2>
+        <p>
+          Todos os aplicativos FZL usam o mesmo login Google, por isso a tela de consentimento do Google mostra o nome
+          <strong>FZL Apps</strong>. O login é opcional e solicita apenas:
+        </p>
+        <ul>
+          <li><code>openid</code>, <code>email</code>, <code>profile</code>: para mostrar seu nome e foto no aplicativo;</li>
+          <li>
+            <code>drive.file</code>: para gravar e abrir <strong>somente</strong> os arquivos que o próprio aplicativo criou
+            ou que você escolheu, na sua conta Google Drive.
+          </li>
+        </ul>
+        <p>
+          Nenhum dado é enviado ao desenvolvedor. Detalhes na
+          <a href="privacy.html">Política de Privacidade</a>.
+        </p>
+      </section>
+
+      <footer>
+        <a href="privacy.html">Política de Privacidade</a>
+        <a href="terms.html">Termos de Uso</a>
+        <a href="mailto:wagnerdocri@gmail.com">Contato</a>
+        <span>© 2026 Wagner Marques</span>
+      </footer>
+    </div>
+
+    <script src="apps.js"></script>
+    <script>
+      ;(function () {
+        var apps = window.FZL_APPS || []
+        var params = new URLSearchParams(location.search)
+        var current = params.get('app')
+        var list = document.getElementById('apps')
+
+        apps.forEach(function (app) {
+          var el = document.createElement('article')
+          el.className = 'app' + (app.id === current ? ' current' : '')
+          var h = document.createElement('h3')
+          h.textContent = app.name
+          var p = document.createElement('p')
+          p.textContent = app.description
+          var links = document.createElement('div')
+          links.className = 'links'
+          var open = document.createElement('a')
+          open.href = app.url
+          open.textContent = 'Abrir aplicativo →'
+          var priv = document.createElement('a')
+          priv.href = app.privacy
+          priv.textContent = 'Privacidade'
+          links.append(open, priv)
+          el.append(h, p, links)
+          list.append(el)
+        })
+
+        var match = apps.find(function (a) {
+          return a.id === current
+        })
+        if (match) {
+          var ctx = document.getElementById('context')
+          ctx.textContent = ''
+          var strong = document.createElement('strong')
+          strong.textContent = match.name
+          var back = document.createElement('a')
+          back.href = match.url
+          back.textContent = 'Voltar ao ' + match.name
+          ctx.append('Você chegou aqui a partir do ', strong, ', que faz parte dos FZL Apps. ', back, '.')
+          ctx.classList.add('show')
+        }
+      })()
+    </script>
+  </body>
+</html>
